@@ -14,6 +14,7 @@ function cek() {
     var bobot1 = 0;
     var bobot2 = 0;
     var valid = true;
+    var regex = /^[a-zA-Z]+$/;
 
     if (!select) {
         hasil.textContent = "Oupss, pilihan harus diisi terlebih dahulu!";
@@ -40,53 +41,55 @@ function cek() {
     }
 
     if (select == "Laki-laki dan perempuan") {
+        const regex = /^[a-zA-Z]+$/;
+        let valid = true;
+        let bobot1 = 0;
+        let bobot2 = 0;
+
         for (var i = 0; i < input1.length; i++) {
+            if (!regex.test(input1[i])) {
+                hasil.textContent = "Maaf, input harus diisi dengan huruf!";
+                whasil.style.background = "red";
+                valid = false;
+                break;
+            }
             var karakter = input1.charCodeAt(i);
             bobot1 += karakter - 96;
             bobot1 = bobot1 % 4;
-            if (isNaN(karakter) === false) {
-                hasil.textContent = "Maaf, input harus diisi dengan huruf!";
-                whasil.style.background = "red";
-                valid = false;
-                break;
-            }
         }
 
         for (var i = 0; i < input2.length; i++) {
-            var karakter2 = input2.charCodeAt(i);
-            bobot2 += karakter2 - 96;
-            bobot2 = bobot2 % 4;
-            if (isNaN(karakter2) === false) {
+            if (!regex.test(input2[i])) {
                 hasil.textContent = "Maaf, input harus diisi dengan huruf!";
                 whasil.style.background = "red";
                 valid = false;
                 break;
             }
+            var karakter2 = input2.charCodeAt(i);
+            bobot2 += karakter2 - 96;
+            bobot2 = bobot2 % 4;
         }
 
-        // if (!valid) {
-        //     return;
-        // }
+        if (valid) {
+            var abs = Math.abs(bobot1 - bobot2)
 
-        var abs = Math.abs(bobot1 - bobot2)
-
-        if (bobot1 == 3 && bobot2 == 3) {
-            hasil.textContent = "Pasangan kekasih yang cocok"
-            whasil.style.background = "#13D369"
-        } else if (bobot1 == 0 && bobot2 == 0) {
-            hasil.textContent = "Pasangan kekasih yang tidak memiliki masa depan!!!"
-            whasil.style.background = "#e6361a"
-        } else if (abs == 1) {
-            hasil.textContent = "Pasangan kekasih yang kadang tidak akur"
-            whasil.style.background = "#C29F23"
-        } else if (abs == 2) {
-            hasil.textContent = "Pasangan kekasih yang suka ribut"
-            whasil.style.background = "#C315C9"
-        } else if (abs == 3) {
-            hasil.textContent = "Maaf, tidak disarankan menjalin hubungan"
-            whasil.style.background = "#e6361a"
+            if (bobot1 == 3 && bobot2 == 3) {
+                hasil.textContent = "Pasangan kekasih yang cocok"
+                whasil.style.background = "#13D369"
+            } else if (bobot1 == 0 && bobot2 == 0) {
+                hasil.textContent = "Pasangan kekasih yang tidak memiliki masa depan!!!"
+                whasil.style.background = "#e6361a"
+            } else if (abs == 1) {
+                hasil.textContent = "Pasangan kekasih yang kadang tidak akur"
+                whasil.style.background = "#C29F23"
+            } else if (abs == 2) {
+                hasil.textContent = "Pasangan kekasih yang suka ribut"
+                whasil.style.background = "#C315C9"
+            } else if (abs == 3) {
+                hasil.textContent = "Maaf, tidak disarankan menjalin hubungan"
+                whasil.style.background = "#e6361a"
+            }
         }
-
     } else {
         hasil.textContent = "Oupss, jenis kelamin harus diisi terlebih dahulu!"
         whasil.style.background = "#e6361a"
