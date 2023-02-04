@@ -41,7 +41,7 @@ function cek() {
     }
 
     if (select == "Laki-laki dan perempuan") {
-        const regex = /^[a-zA-Z]+$/;
+        const regex = /^[a-zA-Z\s]+$/;
         let valid = true;
         let bobot1 = 0;
         let bobot2 = 0;
