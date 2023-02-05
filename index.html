@@ -1,83 +1,244 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-stone-900">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="assets/css/style.css" /> -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.49.0/dist/full.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Tes kecocokan pasangan</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Tio Yudho Prasetio, Tio Yudho, Tio Prasetio, Tio">
+  <title>LoveTest | Tes kecocokan pasangan</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/js/script.js"></script>
 </head>
 
 <body>
-    <section class="container mx-auto">
-        <div class="w-80 max-w-xs mx-auto items-center">
-            <div class="alert alert-warning shadow-lg mt-10">
-                <div class="flex-col">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                        class="stroke-current flex-shrink-0 w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                    <p class="text-center text-xl font-semibold">
-                        Tes kecocokan pasangan
-                    </p>
-                    <p class="text-center font-medium">
-                        Hanya hiburan, jangan dianggap serius
-                    </p>
-                </div>
-            </div>
+  <!-- Navigation -->
+  <nav class="fixed flex justify-between py-3 w-full lg:px-48 md:px-12 px-4 content-center bg-secondary z-10">
+    <div class="flex items-center">
+      <h3 class="font-montserrat font-medium text-xl mb-2">LoveTest</h3>
+    </div>
+    <ul class="font-montserrat items-center hidden md:flex">
+      <li class="mx-3 ">
+        <a class="growing-underline" href="#cara">
+          Cara kerja
+        </a>
+      </li>
+      <li class="growing-underline mx-3">
+        <a href="#fitur">Fitur</a>
+      </li>
+      <li class="growing-underline mx-3">
+        <a href="#mulai">Mulai</a>
+      </li>
+    </ul>
+    <div class="font-montserrat hidden md:block">
+      <!-- <button class="mr-6">Login</button> -->
+      <a href="#mulai" class="py-2 px-4 text-white bg-black rounded-3xl">
+        Mulai
+      </a>
+    </div>
+    <div id="showMenu" class="md:hidden">
+      <img src='assets/img/logos/Menu.svg' alt="" />
+    </div>
+  </nav>
+  <div id='mobileNav' class="hidden px-4 py-6 fixed top-0 left-0 h-full w-full bg-secondary z-20 animate-fade-in-down">
+    <div id="hideMenu" class="flex justify-end">
+      <img src='assets/img/logos/Cross.svg' alt="" class="h-16 w-16" />
+    </div>
+    <ul id="nav" class="font-montserrat flex flex-col mx-8 my-24 items-center text-3xl">
+      <li class="my-6">
+        <a href="#cara">Cara kerja</a>
+      </li>
+      <li class="my-6">
+        <a href="#fitur">Fitur</a>
+      </li>
+      <li class="my-6">
+        <a href="#mulai">Mulai</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Hero -->
+  <section
+    class="pt-24 max-sm:mb-5 md:mt-0 md:h-screen flex flex-col justify-center text-center md:text-left md:flex-row md:justify-between md:items-center lg:px-48 md:px-12 px-4 bg-secondary">
+    <div class="md:flex-1 md:mr-10">
+      <h1 class="font-pt-serif text-5xl font-bold mb-7">
+        Love
+        <span class="bg-underline1 bg-left-bottom bg-no-repeat pb-2 bg-100%">
+          Test
+        </span>
+        ?
+      </h1>
+      <p class="font-pt-serif font-normal mb-7">
+        Program ini dibuat untuk mengecek seberapa cocoknya kamu dan
+        pasangan dengan cara memasukan nama kamu dan pasangan
+      </p>
+      <div class="font-montserrat">
+        <a href="#mulai" class="bg-black px-6 py-4 rounded-lg border-2 border-black border-solid text-white mr-2 mb-2">
+          Ayo coba!
+        </a>
+      </div>
+    </div>
+    <div class="flex justify-around md:block mt-8 md:mt-0 md:flex-1">
+      <div class="relative">
+        <img src='assets/img/Highlight1.svg' alt="" class="absolute -top-16 -left-10" />
+      </div>
+      <img src='assets/img/MacBook Pro.png' alt="" />
+      <div class="relative">
+        <img src='assets/img/Highlight2.svg' alt="" class="absolute -bottom-10 -right-6" />
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="bg-black text-white sectionSize text-center" id="cara">
+    <div>
+      <h2 class="secondaryTitle bg-underline2 bg-100%">cara kerjanya?</h2>
+    </div>
+    <div class="flex flex-col md:flex-row">
+      <div class="flex-1 mx-8 flex flex-col items-center my-4">
+        <div class="border-2 rounded-full bg-secondary text-black h-12 w-12 flex justify-center items-center mb-3">
+          1
         </div>
-        <div class="hero-content mx-auto">
-            <div class="flex-column items-center">
-                <div class="mb-4">
-                    <!-- target object -->
-                    <div class="card w-full max-w-xs mx-auto bg-purple-800 " id="targetObject">
-                        <div class="card-body font-normal text-white">
-                            <p id="targetObject2">
-                                * Masukan nama dan lihat seberapa cocoknya kalian
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-control w-full max-w-xs mx-auto">
-                    <!-- selection & input user -->
-                    <select class="select select-info w-full max-w-xs text-gray-300 border-gray-500 bg-stone-900"
-                        id="selection">
-                        <option disabled selected>Pilih jenis kelamin</option>
-                        <option>Laki-laki dan perempuan</option>
-                    </select>
-                    <label class="label">
-                        <span class="label-text text-gray-300">input</span>
-                    </label>
-                    <input type="text" placeholder="masukan nama ke satu"
-                        class="input bg-stone-900 text-gray-300 border-gray-500 input-bordered w-full max-w-xs mb-4"
-                        id="inputValue" />
-                    <input type="text" placeholder="masukan nama ke dua"
-                        class="input bg-stone-900 text-gray-300 border-gray-500 input-bordered w-full max-w-xs mb-4"
-                        id="inputValue2" />
-                </div>
-                <!-- trigger button -->
-                <button
-                    class="btn inline-block cursor-pointer rounded-md bg-purple-800 px-4 py-3 text-center text-sm font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-purple-500 hover:text-white mx-auto w-full"
-                    onClick="cek()">
-                    cek kecocokan
-                </button>
-                <button
-                    class="btn2 inline-block cursor-pointer rounded-md bg-purple-800 px-4 py-3 text-center text-sm font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-purple-500 hover:text-white mx-auto w-full"
-                    onClick="ulang()">
-                    muat ulang program
-                </button>
-            </div>
+        <h3 class="font-montserrat font-medium text-xl mb-2">Pilih jenis kelamin</h3>
+        <p class="text-center font-montserrat">
+          Pilih jenis kelamin terlebih dahulu, untuk saat ini normalnya hanya ada dua jenis kelamin
+          yaitu laki-laki dan perempuan.
+        </p>
+      </div>
+      <div class="flex-1 mx-8 flex flex-col items-center my-4">
+        <div class="border-2 rounded-full bg-secondary text-black h-12 w-12 flex justify-center items-center mb-3">
+          2
         </div>
-    </section>
-    <footer class="absolute bg-stone-900 bottom-0 w-full p-4">
-        <p class="text-center max-w-xs mx-auto text-gray-400">Copyright &copy; 2023 Tio Yudho Prasetio. All Rights
-            Reserved</p>
-    </footer>
-    <script src="assets/js/script.js"></script>
+        <h3 class="font-montserrat font-medium text-xl mb-2">Masukkan nama pertama</h3>
+        <p class="text-center font-montserrat">
+          Setelah memilih jenis kelamin, selanjutnya masukkan nama pertama.
+        </p>
+      </div>
+      <div class="flex-1 mx-8 flex flex-col items-center my-4">
+        <div class="border-2 rounded-full bg-secondary text-black h-12 w-12 flex justify-center items-center mb-3">
+          3
+        </div>
+        <h3 class="font-montserrat font-medium text-xl mb-2">Masukkan nama ke dua</h3>
+        <p class="text-center font-montserrat">
+          Setelah memasukkan nama pertama, selanjutnya masukkan nama kedua.
+        </p>
+      </div>
+      <div class="flex-1 mx-8 flex flex-col items-center my-4">
+        <div class="border-2 rounded-full bg-secondary text-black h-12 w-12 flex justify-center items-center mb-3">
+          4
+        </div>
+        <h3 class="font-montserrat font-medium text-xl mb-2">Klik tombol cek kecocokan</h3>
+        <p class="text-center font-montserrat">
+          Setelah memasukkan nama kedua, selanjutnya klik tombol cek kecocokan dan lihat hasil kecocokan.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="sectionSize bg-secondary" id="fitur">
+    <div>
+      <h2 class="secondaryTitle bg-underline3 bg-100%">Fitur</h2>
+    </div>
+    <div class="md:grid md:grid-cols-2 md:grid-rows-2">
+
+      <div class="flex items-start font-montserrat my-6 mr-10">
+        <img src='assets/img/logos/Heart.svg' alt='' class="h-7 mr-4" />
+        <div>
+          <h3 class="font-semibold text-2xl">Feature #1</h3>
+          <p>
+            Program ini dibuat agar dapat memberikan nilai kecocokan kamu dan
+            pasangan dengan hanya memasukkan nama kamu dan pasangan. Jangan dibawa
+            serius, program ini dibuat hanya untuk hiburan
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="mulai" class="sectionSize bg-secondary py-0">
+    <div>
+      <h2 class="secondaryTitle bg-underline4 mb-0 bg-100%">Program</h2>
+    </div>
+    <div class="flex w-full flex-col md:flex-row">
+
+      <div
+        class='flex-1 items-center flex flex-col mx-6 shadow-2xl relative bg-secondary rounded-2xl py-5 px-8 my-8 md:top-24'>
+        <h3 class="font-pt-serif font-normal text-2xl mb-4">
+          Test Love Program
+        </h3>
+        <a href="index2.html"
+          class=" border-2 text-center border-solid border-black rounded-xl text-lg py-3 mt-4 mx-auto w-full">
+          Coba Sekarang!
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ  -->
+  <section class="sectionSize items-start pt-8 md:pt-36 bg-black text-white">
+    <div>
+      <h2 class="secondaryTitle bg-highlight3 p-10 mb-0 bg-center bg-100%">
+        FAQ
+      </h2>
+    </div>
+
+    <div toggleElement class="w-full py-4">
+      <div class="flex justify-between items-center">
+        <div question class="font-montserrat font-medium mr-auto">
+          Apakah ini akurat?
+        </div>
+        <img src='assets/img/logos/CaretRight.svg' alt="" class="transform transition-transform" />
+      </div>
+      <div answer class="font-montserrat text-sm font-extralight pb-8 hidden">
+        Tidak, ini hanya sekedar hiburan.
+      </div>
+    </div>
+    <hr class="w-full bg-white" />
+
+    <div toggleElement class="w-full py-4">
+      <div class="flex justify-between items-center">
+        <div question class="font-montserrat font-medium mr-auto">
+          Apakah ini gratis?
+        </div>
+        <img src='assets/img/logos/CaretRight.svg' alt="" class="transform transition-transform" />
+      </div>
+      <div answer class="font-montserrat text-sm font-extralight pb-8 hidden">
+        Yup! kamu bisa mencobanya secara gratis.
+      </div>
+    </div>
+    <hr class="w-full bg-white" />
+
+    <div toggleElement class="w-full py-4">
+      <div class="flex justify-between items-center">
+        <div question class="font-montserrat font-medium mr-auto">
+          Kalau ga punya pasangan?
+        </div>
+        <img src='assets/img/logos/CaretRight.svg' alt="" class="transform transition-transform" />
+      </div>
+      <div answer class="font-montserrat text-sm font-extralight pb-8 hidden">
+        Itu sih derita lo.
+      </div>
+    </div>
+    <hr class="w-full bg-white" />
+
+  </section>
+
+  <!-- Footer -->
+  <section class="bg-black sectionSize">
+    <div class="mb-4">
+      <h3 class="font-montserrat text-white text-lg">LoveTest.</h3>
+    </div>
+    <div class="flex mb-8">
+      <a href="https://www.instagram.com/tioprasetio_" target="_blank">
+        <img src='assets/img/logos/Instagram.svg' alt="Instagram logo" class="mx-4" />
+      </a>
+    </div>
+    <div class="text-white max-sm:text-center font-montserrat text-sm">
+      Copyright &copy; 2023 Tio Yudho Prasetio. All rights reserved
+    </div>
+  </section>
 </body>
 
 </html>
